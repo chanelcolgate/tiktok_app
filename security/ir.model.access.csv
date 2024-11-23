@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tiktok_app_tiktok_app,tiktok_app.tiktok_app,model_tiktok_app_tiktok_app,base.group_user,1,1,1,1
+access_tiktok_user,TiktokUser,model_tiktok_product,tiktok_group_user,1,1,1,0
+access_tiktok_manager,TiktokManager,model_tiktok_product,tiktok_group_manager,1,1,1,1
