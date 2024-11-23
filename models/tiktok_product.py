@@ -18,3 +18,9 @@ class Product(models.Model):
             rec_name = f"{record.product_type}, {record.product_size}, {record.product_color}"
             result.append((record.id, rec_name))
         return result
+
+    @api.model
+    def create(self, vals):
+        vals['name'] = "{record.product_type}, {record.product_size}, {record.product_color}"
+        new_record = super().create(vals)
+        return new_record
