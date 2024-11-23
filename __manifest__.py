@@ -18,8 +18,8 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
         "security/tiktok_security.xml",
+        'security/ir.model.access.csv',
         "views/tiktok_menu.xml",
         "views/product_view.xml",
     ],
