@@ -14,5 +14,5 @@
 
     <menuitem id="menu_tiktok_configuration"
         name="Configuration"
-        parent="menu_itktok" />
+        parent="menu_tiktok" />
 </odoo>
