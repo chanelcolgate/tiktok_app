@@ -5,7 +5,7 @@ class Product(models.Model):
     _description = "Product"
 
     name = fields.Char("Title")
-    product_id = fields.Integer(string="Product Id", required=True)
+    product_id = fields.Char(string="Product Id", required=True)
     product_type = fields.Char("Product Type", required=True)
     product_size = fields.Char("Product Size", required=True)
     product_color = fields.Char("Product Color", required=True)
