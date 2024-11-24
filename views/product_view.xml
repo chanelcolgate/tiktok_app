@@ -20,9 +20,7 @@
                         <field name="product_size" />
                         <field name="product_color" />
                         <field name="active" />
-                        <div>
-                            <img t-att-src="record.image_url" alt="Product Image" style="max-width:200px; max-height:200px;" />
-                        </div>
+                        <field name="product_image" widget="image" />
                     </group>
                 </sheet>
             </form>
