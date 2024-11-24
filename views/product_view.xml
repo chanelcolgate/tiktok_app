@@ -21,7 +21,7 @@
                         <field name="product_color" />
                         <field name="active" />
                         <div>
-                            <img t-att-src="record.image_url" style="max-width:200px; max-height:200px;" />
+                            <img t-att-src="record.image_url" alt="Product Image" style="max-width:200px; max-height:200px;" />
                         </div>
                     </group>
                 </sheet>
