@@ -1,3 +1,6 @@
+import requests
+import base64
+
 from odoo import fields, models, api
 
 class Product(models.Model):
@@ -11,6 +14,7 @@ class Product(models.Model):
     product_color = fields.Char("Product Color", required=True)
     active = fields.Boolean("Active?", default=True)
     image = fields.Binary("Cover")
+    product_image = fields.Binary(string="Image", compute="_compute_image_url")
     image_url = fields.Char(string="Image URL")
 
     def name_get(self):
@@ -25,3 +29,11 @@ class Product(models.Model):
         vals['name'] = f"{vals['product_type']}, {vals['product_size']}, {vals['product_color']}"
         new_record = super().create(vals)
         return new_record
+
+    @api.depends("image_url")
+    def _compute_image_url(self):
+        """ function to load image from URL """
+        image = False
+        if self.image_url:
+            image = base64.b64encode(requests.get(self.image_url).content)
+        self.product_image = image
