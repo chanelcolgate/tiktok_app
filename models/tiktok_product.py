@@ -11,6 +11,7 @@ class Product(models.Model):
     product_color = fields.Char("Product Color", required=True)
     active = fields.Boolean("Active?", default=True)
     image = fields.Binary("Cover")
+    image_url = fields.Char(string="Image URL")
 
     def name_get(self):
         result = []
