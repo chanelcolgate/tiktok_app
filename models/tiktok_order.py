@@ -11,7 +11,7 @@ class Order(models.Model):
 
     name = fields.Char("Order ID")
 
-    line_ids = fields.One2Many(
+    line_ids = fields.One2many(
         "tiktok.order.line",
         "order_id",
         string="Line Items"
