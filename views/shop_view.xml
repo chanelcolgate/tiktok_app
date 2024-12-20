@@ -53,7 +53,7 @@
     <record id="action_tiktok_shop" model="ir.actions.act_window">
         <field name="name">Shop Management</field>
         <field name="res_model">tiktok.shop</field>
-        <fieldn name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="menu_tiktok_shop"
