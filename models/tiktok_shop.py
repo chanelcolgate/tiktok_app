@@ -9,7 +9,7 @@ class Shop(models.Model):
     app_secret = fields.Char("App Secret")
     auth_code = fields.Char("Auth Code", password="True")
     shop_id = fields.Char("Shop ID")
-    shop_cipher = field.Char("Shop Cipher")
+    shop_cipher = fields.Char("Shop Cipher")
     state = fields.Char("State")
 
     active = fields.Boolean("Active?", default=True)
