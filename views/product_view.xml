@@ -37,4 +37,15 @@
             </tree>
         </field>
     </record>
+
+    <record id="action_tiktok_product" model="ir.actions.act_window">
+        <field name="name">Product Management</field>
+        <field name="res_model">tiktok.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tiktok_product"
+        name="Product Management"
+        parent="menu_tiktok"
+        action="action_tiktok_product" />
 </odoo>

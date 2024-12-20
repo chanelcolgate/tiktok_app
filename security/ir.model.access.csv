@@ -1,3 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tiktok_user,TiktokUser,model_tiktok_product,tiktok_group_user,1,1,1,0
-access_tiktok_manager,TiktokManager,model_tiktok_product,tiktok_group_manager,1,1,1,1
+product_user,Product User,model_tiktok_product,tiktok_group_user,1,1,1,0
+product_manager,Product Manager,model_tiktok_product,tiktok_group_manager,1,1,1,1
+order_user,Order User,model_tiktok_order,tiktok_group_user,1,1,1,1
+order_line_user,Order Line User,model_tiktok_order_line,tiktok_group_user,1,1,1,1
+order_stage_user,Order Stage User,model_tiktok_order_stage,tiktok_group_user,1,0,0,0
+order_stage_manager,Order Stage Manager,model_tiktok_order_stage,tiktok_group_manager,1,1,1,1
+shop_user,Shop User,model_tiktok_shop,tiktok_group_user,1,1,1,0
+shop_manager,Shop Manager,model_tiktok_shop,tiktok_group_manager,1,1,1,1

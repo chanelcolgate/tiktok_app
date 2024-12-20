@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_form_shop" model="ir.ui.view">
+        <field name="name">Shop Form</field>
+        <field name="model">tiktok.shop</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- To add buttons and status widget -->
+                </header>
+                <sheet>
+                    <!-- Button box -->
+
+                    <!-- Header title -->
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1><field name="name" /></h1>
+                    </div>
+
+                    <!-- Header fields -->
+                    <group name="group_top" col="4">
+                        <field name="app_key" />
+                        <field name="app_secret" />
+                        <field name="auth_code" />
+                    </group>
+
+                    <!-- Notebook -->
+                    <notebook>
+                        <page name="shops" string="Shop">
+                            <tree editable="bottom">
+                                <field name="shop_cipher" />
+                                <field name="shop_id" />
+                                <field name="active" />
+                                <field name="state" />
+                            </tree>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_shop" model="ir.ui.view">
+        <field name="name">Shop Tree</field>
+        <field name="model">tiktok.shop</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="shop_cipher" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_tiktok_shop" model="ir.actions.act_window">
+        <field name="name">Shop Management</field>
+        <field name="res_model">tiktok.shop</field>
+        <fieldn name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tiktok_shop"
+        name="Shops"
+        action="action_tiktok_shop"
+        parent="menu_tiktok_configuration" />
+</odoo>

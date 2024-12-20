@@ -22,6 +22,7 @@
         'security/ir.model.access.csv',
         "views/tiktok_menu.xml",
         "views/product_view.xml",
+        "views/shop_view.xml",
     ],
     # only loaded in demonstration mode
     'demo': [
