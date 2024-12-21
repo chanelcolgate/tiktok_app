@@ -11,3 +11,4 @@ class ShopLine(models.Model):
     state = fields.Char("State")
 
     shop_id = fields.Many2one("tiktok.shop", required=True)
+    shop_line_db_id = fields.Integer(default=201)

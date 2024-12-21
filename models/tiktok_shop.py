@@ -10,6 +10,8 @@ class Shop(models.Model):
     auth_code = fields.Char("Auth Code")
     auth_code_display = fields.Char("Auth Code", compute="_compute_auth_code_display")
 
+    shop_db_id = fields.Integer(default=101)
+
     line_ids = fields.One2many(
         "tiktok.shop.line",
         "shop_id",
