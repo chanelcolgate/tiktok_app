@@ -38,6 +38,7 @@ class ShopLine(models.Model):
                 if response.status_code == 200:
                     data = response.json()
                     self.env.cr.commit()
+                print(data)
                 else:
                     return False
             except requests.exceptions.RequestException as e:
