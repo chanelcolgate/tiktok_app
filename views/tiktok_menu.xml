@@ -4,4 +4,15 @@
     <menuitem id="menu_tiktok_configuration"
         name="Configuration"
         parent="menu_tiktok" />
+
+    <record id="action_tiktok_stage" model="ir.actions.act_window">
+        <field name="name">Stages</field>
+        <field name="res_model">tiktok.order.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tiktok_stage"
+        name="Stages"
+        action="action_tiktok_stage"
+        parent="menu_tiktok_configuration" />
 </odoo>
