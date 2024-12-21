@@ -33,6 +33,10 @@
                                     <field name="shop_num" />
                                     <field name="active" />
                                     <field name="state" />
+                                    <button type="object"
+                                        name="button_refresh_token"
+                                        class="float-right btn-secondary"
+                                        string="Refresh Token" />
                                 </tree>
                             </field>
                         </page>
