@@ -9,7 +9,7 @@ class OrderLine(models.Model):
 
     name = fields.Char("Product Name")
     order_line_id = fields.Char("Order Line ID")
-    sku_image = fields.Binary("Cover", compute="_compute_image_url")
+    sku_image = fields.Binary("Product Image", compute="_compute_image_url")
     sku_image_url = fields.Char(string="SKU Image URL")
     currency_id = fields.Many2one("res.currency")
     sale_price = fields.Monetary("Sale Price", "currency_id")

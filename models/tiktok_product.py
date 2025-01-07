@@ -14,8 +14,8 @@ class Product(models.Model):
     product_color = fields.Char("Product Color", required=True)
     active = fields.Boolean("Active?", default=True)
     image = fields.Binary("Cover")
-    product_image = fields.Binary(string="Image", compute="_compute_image_url")
-    image_url = fields.Char(string="Image URL")
+    # product_image = fields.Binary(string="Image", compute="_compute_image_url")
+    # image_url = fields.Char(string="Image URL")
 
     def name_get(self):
         result = []
@@ -30,10 +30,10 @@ class Product(models.Model):
         new_record = super().create(vals)
         return new_record
 
-    @api.depends("image_url")
-    def _compute_image_url(self):
-        """ function to load image from URL """
-        image = False
-        if self.image_url:
-            image = base64.b64encode(requests.get(self.image_url).content)
-        self.product_image = image
+    # @api.depends("image_url")
+    # def _compute_image_url(self):
+    #     """ function to load image from URL """
+    #     image = False
+    #     if self.image_url:
+    #         image = base64.b64encode(requests.get(self.image_url).content)
+    #     self.product_image = image
