@@ -26,6 +26,7 @@
                             <field name="order_line_id" />
                             <field name="sku_image_url" />
                             <br/>
+                            <br/>
                             <field name="mockup_front_image" widget="image" options="{'size': [128, 128]}" />
                             <field name="mockup_front_image_url" />
                             <field name="design_front_image" widget="image"  options="{'size': [128, 128]}"/>
