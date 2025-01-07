@@ -1,4 +1,8 @@
-from odoo import fields, models, api
+import logging
+
+from odoo import fields, models, api, exceptions
+
+_logger = logging.getLogger(__name__)
 
 class Order(models.Model):
     _name = "tiktok.order"
@@ -53,3 +57,16 @@ class Order(models.Model):
         ],
         default="not_design"
     )
+
+    def button_send(self):
+        self.ensure_one()
+        if not self.line_ids:
+            raise exceptions.UserError("No Lines were selected")
+
+        for line in self.line_ids:
+            _logger.debug(
+                f"Order Line on {line.order_line_id}"
+            )
+
+        _logger.info(f"Order on {self.name}")
+        return True
