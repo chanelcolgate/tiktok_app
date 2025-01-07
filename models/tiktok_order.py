@@ -64,7 +64,7 @@ class Order(models.Model):
             raise exceptions.UserError("No Lines were selected")
 
         for line in self.line_ids:
-            _logger.debug(
+            _logger.info(
                 f"Order Line on {line.order_line_id}"
             )
 
