@@ -15,7 +15,7 @@ class OrderLine(models.Model):
     sale_price = fields.Monetary("Sale Price", "currency_id")
 
     order_id = fields.Many2one("tiktok.order", required=True)
-    product_id = fields.Many2one("Variant", "tiktok.product")
+    product_id = fields.Many2one(string="Variant", "tiktok.product")
     select_product = fields.Char("Select Product", related="product_id.product_type")
     select_color = fields.Char("Select Color", related="product_id.product_color")
     select_size = fields.Char("Select Size", related="product_id.product_size")
