@@ -3,7 +3,8 @@
 
     <menuitem id="menu_tiktok_configuration"
         name="Configuration"
-        parent="menu_tiktok" />
+        parent="menu_tiktok"
+        sequence="100"/>
 
     <record id="action_tiktok_stage" model="ir.actions.act_window">
         <field name="name">Stages</field>
