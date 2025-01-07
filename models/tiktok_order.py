@@ -49,7 +49,7 @@ class Order(models.Model):
     design_state = fields.Selection(
         [
             ("not_design", "Not Design"),
-            ("Design", "Designed"),
+            ("design", "Designed"),
         ],
         default="not_design"
     )
