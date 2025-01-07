@@ -44,7 +44,7 @@
                     <!-- Notebook -->
                     <notebook>
                         <page name="lines" string="Line Items">
-                            <field name="line_ids">
+                            <field name="line_ids" context="{'tree_editable': 1}">
                                 <tree editable="bottom">
                                     <field name="order_line_id" />
                                     <field name="name" />
