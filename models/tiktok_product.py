@@ -42,7 +42,7 @@ class Product(models.Model):
     def _name_search(
             self,
             name="",
-            args=NOne,
+            args=None,
             operator="ilike",
             limit=100,
             name_get_uid=None):
