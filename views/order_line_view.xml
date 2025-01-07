@@ -25,19 +25,20 @@
                         <group name="group_left">
                             <field name="order_line_id" />
                             <field name="sku_image_url" />
+                            <br/>
+                            <field name="mockup_front_image" widget="image" options="{'size': [128, 128]}" />
                             <field name="mockup_front_image_url" />
-                            <field name="mockup_back_image_url" />
+                            <field name="design_front_image" widget="image"  options="{'size': [128, 128]}"/>
                             <field name="design_front_image_url" />
-                            <field name="design_back_image_url" />
                         </group>
                         <group name="group_right">
                             <field name="product_id" />
                             <field name="sale_price" />
                             <field name="currency_id" />
-                            <field name="mockup_front_image" widget="image" options="{'size': [128, 128]}" />
-                            <field name="mockup_back_image" options="{'size': [128, 128]}"/>
-                            <field name="design_front_image" options="{'size': [128, 128]}"/>
-                            <field name="design_back_image" options="{'size': [128, 128]}"/>
+                            <field name="mockup_back_image_url" />
+                            <field name="mockup_back_image" widget="image" options="{'size': [128, 128]}"/>
+                            <field name="design_back_image_url" />
+                            <field name="design_back_image" widget="image"  options="{'size': [128, 128]}"/>
                         </group>
                     </group>
 
