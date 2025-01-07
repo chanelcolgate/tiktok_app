@@ -41,15 +41,15 @@ class Order(models.Model):
 
     fullfill_state = fields.Selection(
         [
-            ("not fullfill", "Not Fullfill"),
+            ("not_fullfill", "Not Fullfill"),
             ("fullfilled", "Fullfilled"),
         ],
-        default="not fullfill"
+        default="not_fullfill"
     )
     design_state = fields.Selection(
         [
-            ("not design", "Not Design"),
+            ("not_design", "Not Design"),
             ("Design", "Designed"),
         ],
-        default="not design"
+        default="not_design"
     )
