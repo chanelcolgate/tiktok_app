@@ -21,17 +21,16 @@
                         <h1><field name="name" /></h1>
                     </div>
 
-                    <!-- Heaer fields -->
+                    <!-- Header fields -->
                     <group name="group_top" col="4">
                         <field name="name" />
                         <field name="total_amount" />
                         <field name="currency_id" />
-                        <span colspan="2">
-                            <field name="buyer_name" />
-                            <field name="buyer_phone" />
-                            <field name="buyer_address" />
-                            <field name="buyer_zipcode" />
-                        </span>
+                        <span colspan="2" />
+                        <field name="buyer_name" />
+                        <field name="buyer_phone" />
+                        <field name="buyer_address" />
+                        <field name="buyer_zipcode" />
                     </group>
 
                     <!-- Notebook -->
