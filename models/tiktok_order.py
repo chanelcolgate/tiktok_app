@@ -38,3 +38,6 @@ class Order(models.Model):
     buyer_phone = fields.Char("Phone")
     buyer_address = fields.Char("Shipping Address")
     buyer_zipcode = fields.Char("Zip Code")
+
+    fullfillment = fields.Boolean("Fullfillment", default=False)
+    design = fields.Boolean("Map Product and Design", default=False)
