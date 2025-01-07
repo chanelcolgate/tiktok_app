@@ -37,3 +37,25 @@ class Product(models.Model):
     #     if self.image_url:
     #         image = base64.b64encode(requests.get(self.image_url).content)
     #     self.product_image = image
+
+    @api.model
+    def _name_search(
+            self,
+            name="",
+            args=NOne,
+            operator="ilike",
+            limit=100,
+            name_get_uid=None):
+        args = [] if args is None else args.copy()
+        if not(name == "" and operator == "ilike"):
+            args += ["|", "|",
+                     ("name", operator, name),
+                     ("product_type", operator, name),
+                     ("product_size", operator, name),
+                     ("product_color", operator, name)]
+        return super()._name_search(
+                name=name,
+                args=args,
+                operator=operator,
+                limit=limit,
+                name_get_uid=name_get_uid)

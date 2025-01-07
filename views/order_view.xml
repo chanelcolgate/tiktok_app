@@ -22,7 +22,7 @@
                     </div>
 
                     <!-- Header fields -->
-                    <group name="group_top" col="4">
+                    <group name="group_top">
                         <group name="group_left">
                             <field name="total_amount" />
                             <field name="buyer_name" />

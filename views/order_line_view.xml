@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_form_order_line" model="ir.ui.view">
+        <field name="name"></field>
+        <field name="model">tiktok.order.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- To add buttons and status widget -->
+
+                </header>
+                <sheet>
+                    <!-- Button box -->
+
+                    <!-- Header title -->
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="name" />
+                            <field name="order_line_id" />
+                            <field name="sku_image_url" />
+                            <field name="sale_price" />
+                            <field name="currency_id" />
+                        </group>
+                        <group name="group_right">
+                            <field name="select_product" />
+                            <field name="select_color" />
+                            <field name="select_size" />
+                        </group>
+                    </group>
+
+                    <!-- Header fields -->
+
+                    <!-- Notebook -->
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
