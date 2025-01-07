@@ -1,5 +1,5 @@
 <odoo noupdate="1">
-    <record id="stage_awaiting_shipment" model="titkok.order.stage">
+    <record id="stage_awaiting_shipment" model="tiktok.order.stage">
         <field name="name">Awaiting Shipment</field>
         <field name="sequence">10</field>
         <field name="state">awaiting shipment</field>
