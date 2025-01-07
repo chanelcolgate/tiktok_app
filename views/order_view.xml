@@ -29,7 +29,7 @@
                             <field name="buyer_name" />
                             <field name="buyer_phone" />
                             <br/>
-                            <field name="fullfill_state" />
+                            <field name="fullfill_state_1" />
                         </group>
                         <group name="group_right">
                             <field name="currency_id" />
@@ -37,7 +37,7 @@
                             <field name="buyer_address" />
                             <field name="buyer_zipcode" />
                             <br/>
-                            <field name="design_state" />
+                            <field name="design_state_1" />
                         </group>
                     </group>
 
@@ -69,15 +69,15 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
-                <field name="fullfill_state"
+                <field name="fullfill_state_1"
                        widget="badge"
-                       decoration-danger="fullfill_state == 'not_fullfill'"
-                       decoration-success="fullfill_state == 'fullfilled'"
+                       decoration-danger="fullfill_state_1 == 'not_fullfill'"
+                       decoration-success="fullfill_state_1 == 'fullfilled'"
                 />
-                <field name="design_state"
+                <field name="design_state_1"
                        widget="badge"
-                       decoration-danger="design_state == 'not_design'"
-                       decoration-success="design_state == 'designed'"
+                       decoration-danger="design_state_1 == 'not_design'"
+                       decoration-success="design_state_1 == 'designed'"
                 />
                 <field name="total_amount" />
             </tree>

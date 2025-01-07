@@ -39,17 +39,17 @@ class Order(models.Model):
     buyer_address = fields.Char("Shipping Address")
     buyer_zipcode = fields.Char("Zip Code")
 
-    fullfill_state = fields.Selection(
+    fullfill_state_1 = fields.Selection(
         [
             ("not_fullfill", "Not Fullfill"),
             ("fullfilled", "Fullfilled"),
         ],
         default="not_fullfill"
     )
-    design_state = fields.Selection(
+    design_state_1 = fields.Selection(
         [
             ("not_design", "Not Design"),
-            ("design", "Designed"),
+            ("designed", "Designed"),
         ],
         default="not_design"
     )
