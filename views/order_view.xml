@@ -76,16 +76,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
-                <field name="fullfillment" invisible="True"/>
-                <xpath expr="//field[@name='fullfillment']" position="replace">
-                    <field name="fullfillment" widget="boolean" />
-                    <t t-if="record.fullfillment.raw_value">
-                        <i class="fa fa-check text-success" />
-                    </t>
-                    <t t-else="">
-                        <i class="fa fa-times text-danger" />
-                    </t>
-                </xpath>
+                <field name="fullfillment" widget="custom_boolean_icon" string="Active" />
                 <field name="design" />
                 <field name="total_amount" />
             </tree>

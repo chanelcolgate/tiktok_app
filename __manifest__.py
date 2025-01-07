@@ -14,7 +14,7 @@
     'version': '15.0.1.0.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'web'],
 
     # always loaded
     'data': [
@@ -28,6 +28,9 @@
         "data/tiktok_order_stage.xml",
     ],
     # only loaded in demonstration mode
+    'qweb': [
+        "static/src/xml/custom_boolean_icon.xml",
+    ],
     'demo': [
         'demo/demo.xml',
     ],
