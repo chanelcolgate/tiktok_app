@@ -29,16 +29,14 @@
                             <field name="buyer_name" />
                             <field name="buyer_phone" />
                             <br/>
-                            <field name="fullfillment" invisible="True"/>
-                            <xpath expr="//field[@name='fullfillment']" position="replace">
-                                <field name="fullfillment" widget="boolean" />
+                            <div>
                                 <t t-if="record.fullfillment.raw_value">
-                                    <i class="fa fa-check text-success" />
+                                    <i class="fa fa-check text-success" /> Active
                                 </t>
                                 <t t-else="">
-                                    <i class="fa fa-times text-danger" />
+                                    <i class="fa fa-times text-danger" /> Inactive
                                 </t>
-                            </xpath>
+                            </div>
                         </group>
                         <group name="group_right">
                             <field name="currency_id" />
@@ -78,7 +76,16 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
-                <field name="fullfillment" />
+                <field name="fullfillment" invisible="True"/>
+                <xpath expr="//field[@name='fullfillment']" position="replace">
+                    <field name="fullfillment" widget="boolean" />
+                    <t t-if="record.fullfillment.raw_value">
+                        <i class="fa fa-check text-success" />
+                    </t>
+                    <t t-else="">
+                        <i class="fa fa-times text-danger" />
+                    </t>
+                </xpath>
                 <field name="design" />
                 <field name="total_amount" />
             </tree>
