@@ -1,0 +1,12 @@
+<odoo>
+    <template id="custom_boolean_icon" inherit_id="web.basic_fields">
+        <xpath expr="//div[@class='o_field_boolean']" position="replace">
+            <t t-if="value">
+                <span class="fa fa-check text-success" title="Active"></span>
+            </t>
+            <t t-else="">
+                <span class="fa fa-times text-danger" title="Inactive"></span>
+            </t>
+        </xpath>
+    </template>
+</odoo>
