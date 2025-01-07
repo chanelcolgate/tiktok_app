@@ -1,0 +1,49 @@
+<odoo noupdate="1">
+    <record id="stage_awaiting_shipment" model="titkok.order.stage">
+        <field name="name">Awaiting Shipment</field>
+        <field name="sequence">10</field>
+        <field name="state">awaiting shipment</field>
+    </record>
+
+    <record id="stage_awaiting_collection" model="tiktok.order.stage">
+        <field name="name">Awaiting Collection</field>
+        <field name="sequence">20</field>
+        <field name="state">awaiting collection</field>
+    </record>
+
+    <record id="stage_in_transit" model="tiktok.order.stage">
+        <field name="name">In Transit</field>
+        <field name="sequence">30</field>
+        <field name="state">in transit</field>
+    </record>
+
+    <record id="stage_delivered" model="tiktok.order.stage">
+        <field name="name">Delivered</field>
+        <field name="sequence">30</field>
+        <field name="state">delivered</field>
+    </record>
+
+    <record id="stage_completed" model="tiktok.order.stage">
+        <field name="name">Completed</field>
+        <field name="sequence">40</field>
+        <field name="state">completed</field>
+    </record>
+
+    <record id="stage_cancelled" model="tiktok.order.stage">
+        <field name="name">Cancelled</field>
+        <field name="sequence">50</field>
+        <field name="state">cancelled</field>
+    </record>
+
+    <record id="stage_unpaid" model="tiktok.order.stage">
+        <field name="name">Unpaid</field>
+        <field name="sequence">60</field>
+        <field name="state">unpaid</field>
+    </record>
+
+    <record id="stage_on_hold" model="tiktok.order.stage">
+        <field name="name">On Hold</field>
+        <field name="sequence">70</field>
+        <field name="state">on hold</field>
+    </record>
+</odoo>
