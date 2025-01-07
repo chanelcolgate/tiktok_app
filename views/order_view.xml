@@ -29,14 +29,7 @@
                             <field name="buyer_name" />
                             <field name="buyer_phone" />
                             <br/>
-                            <div>
-                                <t t-if="record.fullfillment.raw_value">
-                                    <i class="fa fa-check text-success" /> Active
-                                </t>
-                                <t t-else="">
-                                    <i class="fa fa-times text-danger" /> Inactive
-                                </t>
-                            </div>
+                            <field name="fullfill_state" />
                         </group>
                         <group name="group_right">
                             <field name="currency_id" />
@@ -44,7 +37,7 @@
                             <field name="buyer_address" />
                             <field name="buyer_zipcode" />
                             <br/>
-                            <field name="design" />
+                            <field name="design_state" />
                         </group>
                     </group>
 
@@ -76,8 +69,16 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
-                <field name="fullfillment" widget="custom_boolean_icon" string="Active" />
-                <field name="design" />
+                <field name="fullfill_state"
+                       widget="badge"
+                       decoration-danger="fullfill_state == 'not_fullfill'"
+                       decoration-success="fullfill_state == 'fullfilled'"
+                />
+                <field name="design_state"
+                       widget="badge"
+                       decoration-danger="design_state == 'not_design'"
+                       decoration-success="design_state == 'designed'"
+                />
                 <field name="total_amount" />
             </tree>
         </field>
