@@ -15,14 +15,54 @@ class OrderLine(models.Model):
     sale_price = fields.Monetary("Sale Price", "currency_id")
 
     order_id = fields.Many2one("tiktok.order", required=True)
-    product_id = fields.Many2one("tiktok.product")
+    product_id = fields.Many2one("Variant", "tiktok.product")
     select_product = fields.Char("Select Product", related="product_id.product_type")
     select_color = fields.Char("Select Color", related="product_id.product_color")
     select_size = fields.Char("Select Size", related="product_id.product_size")
 
+    mockup_front_image = fields.Binary("Mockup Front Image", compute="")
+    mockup_back_image = fields.Binary("Mockup Back Image", compute="")
+    design_front_image = fields.Binary("Design Front Image", compute="")
+    design_back_image = fields.Binary("Design Back Image", compute="")
+
+    mockup_front_image_url = fields.Char(string="Mockup Front Image URL")
+    mockup_back_image_url= fields.Char(string="Mockup Back Image URL")
+    design_front_image_url = fields.Char(string="Design Front Image URL")
+    design_back_image_url = fields.Char(string="Design Back Image URL")
+
+    # Product Image
     @api.depends("sku_image_url")
     def _compute_image_url(self):
         image = False
         if self.sku_image_url:
             image = base64.b64encode(requests.get(self.sku_image_url).content)
         self.sku_image = image
+
+    # Mockup front image
+    @api.depends("mockup_front_image_url")
+    def _compute_image_url(self):
+        image = False
+        if self.mockup_front_image_url:
+            image = base64.b64encode(requests.get(self.mockup_front_image_url).content)
+        self.mockup_front_image = image
+
+    @api.depends("mockup_back_image_url")
+    def _compute_image_url(self):
+        image = False
+        if self.mockup_back_image_url:
+            image = base64.b64encode(requests.get(self.mockup_back_image_url).content)
+        self.mockup_back_image = image
+
+    @api.depends("design_front_image_url")
+    def _compute_image_url(self):
+        image = False
+        if self.design_front_image_url:
+            image = base64.b64encode(requests.get(self.design_front_image_url).content)
+        self.design_front_image = image
+
+    @api.depends("design_back_image_url")
+    def _compute_image_url(self):
+        image = False
+        if self.design_back_image_url:
+            image = base64.b64encode(requests.get(self.design_back_image_url).content)
+        self.design_back_image = image
