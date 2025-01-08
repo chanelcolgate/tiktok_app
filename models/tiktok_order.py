@@ -1,3 +1,4 @@
+import json
 import logging
 
 from odoo import fields, models, api, exceptions
@@ -104,6 +105,9 @@ class Order(models.Model):
         body["link_label"] = None
 
         body["products"] = products
+
+        payload = json.dumps(body)
+
         _logger.info(f"Order on {self.name}")
-        _logger.info(body)
+        _logger.info(payload)
         return True
