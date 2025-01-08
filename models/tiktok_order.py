@@ -74,7 +74,7 @@ class Order(models.Model):
                 f"Order Line on {line.order_line_id}"
             )
             product = {}
-            product["variant_id"] = line.product_id;
+            product["variant_id"] = line.product_id.product_id;
             product["printer_design_front_url"] = line.design_front_image_url
             product["printer_design_back_url"]  = line.design_back_image_url
             product["printer_design_right_url"] = None
