@@ -1,6 +1,7 @@
 import logging
 
 from odoo import fields, models, api, exceptions
+from odoo.addons.tiktok_app.utils.utils import name_to_abbreviation
 
 _logger = logging.getLogger(__name__)
 
@@ -59,14 +60,50 @@ class Order(models.Model):
     )
 
     def button_send(self):
+        body = {}
+        products = []
+
         self.ensure_one()
         if not self.line_ids:
             raise exceptions.UserError("No Lines were selected")
+
 
         for line in self.line_ids:
             _logger.info(
                 f"Order Line on {line.order_line_id}"
             )
+            product = {}
+            product["variant_id"] = line.product_id;
+            product["printer_design_front_url"] = line.design_front_image_url
+            product["printer_design_back_url"]  = line.design_back_image_url
+            product["printer_design_right_url"] = None
+            product["printer_design_left_url"] = None
+            product["printer_design_neck_url"] = None
+            product["mockup_front_url"] = line.mockup_front_image_url
+            product["mockup_back_url"]  = line.mockup_back_image_url
+            product["mockup_right_url"] = None
+            product["mockup_left_url"] = None
+            product["mockup_neck_url"] = None
+            product["quantity"] = 1  # Missing
+            product["note"]     = "" # Missing
+            products.append(product)
 
+
+        body["order_id"] = self.name
+        body["buyer_first_name"] = self.buyer_name
+        body["buyer_email"] = None
+        body["buyer_phone"] = None
+        _, province, city, _, address = self.buyer_address.split(",")
+        body["buyer_address1"] = address
+        body["buyer_address2"] = ""
+        body["buyer_city"] = city
+        body["buyer_provice_city"] = name_to_abbreviation[province]
+        body["buyer_zip"] = self.buyer_zipcode
+        body["buyer_country_code"] = "US"   # Missing
+        body["shipment"] = "1"              # Missing
+        body["link_label"] = None
+
+        body["products"] = products
         _logger.info(f"Order on {self.name}")
+        _logger.info(body)
         return True
