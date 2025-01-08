@@ -94,10 +94,10 @@ class Order(models.Model):
         body["buyer_email"] = None
         body["buyer_phone"] = None
         _, province, city, _, address = self.buyer_address.split(",")
-        body["buyer_address1"] = address
+        body["buyer_address1"] = address.strip()
         body["buyer_address2"] = ""
-        body["buyer_city"] = city
-        body["buyer_provice_city"] = name_to_abbreviation[province]
+        body["buyer_city"] = city.strip()
+        body["buyer_provice_city"] = name_to_abbreviation[province.strip()]
         body["buyer_zip"] = self.buyer_zipcode
         body["buyer_country_code"] = "US"   # Missing
         body["shipment"] = "1"              # Missing
