@@ -29,6 +29,18 @@ class OrderLine(models.Model):
     mockup_back_image_url= fields.Char(string="Mockup Back Image URL")
     design_front_image_url = fields.Char(string="Design Front Image URL")
     design_back_image_url = fields.Char(string="Design Back Image URL")
+    note = fields.Char("Notes")
+    quantity = fields.Integer()
+    shipment = fields.Selection(
+        [
+            ("1", "FirstClass"),
+            ("2", "Priority"),
+            ("3", "RushProduction"),
+            ("4", "OverNight"),
+            ("6", "Expedite")
+        ],
+        default="1"
+    )
 
     # Product Image
     @api.depends("sku_image_url")
