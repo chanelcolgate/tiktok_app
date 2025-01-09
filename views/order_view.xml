@@ -33,6 +33,7 @@
                             <br/>
                             <field name="buyer_name" />
                             <field name="buyer_phone" />
+                            <field name="order_date" widget="datetime" />
                             <br/>
                             <field name="fullfill_state_1" />
                         </group>

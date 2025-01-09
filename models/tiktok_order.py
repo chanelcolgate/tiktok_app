@@ -15,7 +15,7 @@ class Order(models.Model):
         Stage = self.env["tiktok.order.stage"]
         return Stage.search([("state", "=", "awaiting shipment")], limit=1)
 
-    name = fields.Char("Order ID")
+    name = fields.Char("Order ID") # id
 
     line_ids = fields.One2many(
         "tiktok.order.line",
@@ -23,10 +23,15 @@ class Order(models.Model):
         string="Line Items"
     )
 
-    order_date = fields.Date(
-        default=lambda s: fields.Date.today(),
+    # order_date = fields.Date(
+    #     default=lambda s: fields.Date.today(),
+    #     store=True,
+    #     readonly=False,
+    # ) # order_date
+    order_date = fields.Datetime(
+        default=lambda s: fields.Datetime.now(),
         store=True,
-        readonly=False,
+        readonly=False
     )
 
     stage_id = fields.Many2one(

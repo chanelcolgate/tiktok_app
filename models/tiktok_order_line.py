@@ -7,14 +7,14 @@ class OrderLine(models.Model):
     _name = "tiktok.order.line"
     _description = "Order Line"
 
-    name = fields.Char("Product Name")
-    order_line_id = fields.Char("Order Line ID")
+    name = fields.Char("Product Name") # order.product_name
+    order_line_id = fields.Char("Order Line ID") # order.id
     sku_image = fields.Binary("Product Image", compute="_compute_image_url")
-    sku_image_url = fields.Char(string="SKU Image URL")
+    sku_image_url = fields.Char(string="SKU Image URL") # order.sku_image
     currency_id = fields.Many2one("res.currency")
-    sale_price = fields.Monetary("Sale Price", "currency_id")
+    sale_price = fields.Monetary("Sale Price", "currency_id") # order.sale_price
 
-    order_id = fields.Many2one("tiktok.order", required=True)
+    order_id = fields.Many2one("tiktok.order", required=True) # order.order_line_list_id
     product_id = fields.Many2one("tiktok.product")
     select_product = fields.Char("Select Product", related="product_id.product_type")
     select_color = fields.Char("Select Color", related="product_id.product_color")
