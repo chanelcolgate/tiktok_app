@@ -32,23 +32,23 @@ class Order(models.Model):
         default=lambda s: fields.Datetime.now(),
         store=True,
         readonly=False
-    )
+    ) # order_date
 
     stage_id = fields.Many2one(
         "tiktok.order.stage",
         default=_default_stage,
         copy=False,
         group_expand="_group_expand_stage_id"
-    )
+    ) # order_status
     state = fields.Selection(related="stage_id.state")
 
-    currency_id = fields.Many2one("res.currency")
-    total_amount = fields.Monetary("Total Amount", "currency_id")
+    currency_id = fields.Many2one("res.currency") # currency
+    total_amount = fields.Monetary("Total Amount", "currency_id") # total_amount
 
-    buyer_name = fields.Char("Buyer")
-    buyer_phone = fields.Char("Phone")
-    buyer_address = fields.Char("Shipping Address")
-    buyer_zipcode = fields.Char("Zip Code")
+    buyer_name = fields.Char("Buyer") # buyer_name
+    buyer_phone = fields.Char("Phone") # buyer_phone
+    buyer_address = fields.Char("Shipping Address") # buyer_address
+    buyer_zipcode = fields.Char("Zip Code") # buyer_zipcode
 
     fullfill_state_1 = fields.Selection(
         [
@@ -98,7 +98,7 @@ class Order(models.Model):
         body["order_id"] = self.name
         body["buyer_first_name"] = self.buyer_name
         body["buyer_email"] = None
-        body["buyer_phone"] = None
+        body["buyer_phone"] = self.buyer_phone
         _, province, city, _, address = self.buyer_address.split(",")
         body["buyer_address1"] = address.strip()
         body["buyer_address2"] = ""
