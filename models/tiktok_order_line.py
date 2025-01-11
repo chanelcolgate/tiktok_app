@@ -45,11 +45,11 @@ class OrderLine(models.Model):
     # Product Image
     @api.depends("sku_image_url")
     def _compute_image_url(self):
-        self.ensure_one()
-        image = False
-        if self.sku_image_url:
-            image = base64.b64encode(requests.get(self.sku_image_url).content)
-        self.sku_image = image
+        for record in self:
+            image = False
+            if record.sku_image_url:
+                image = base64.b64encode(requests.get(record.sku_image_url).content)
+            record.sku_image = image
 
     # Mockup front image
     @api.depends("mockup_front_image_url")
