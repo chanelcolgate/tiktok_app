@@ -78,8 +78,8 @@ class OrderLine(models.Model):
 
     @api.depends("design_back_image_url")
     def _compute_design_back_image_url(self):
-        image = False
         for record in self:
+            image = False
             if record.design_back_image_url:
                 image = base64.b64encode(requests.get(record.design_back_image_url).content)
             record.design_back_image = image
