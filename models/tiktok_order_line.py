@@ -54,28 +54,32 @@ class OrderLine(models.Model):
     # Mockup front image
     @api.depends("mockup_front_image_url")
     def _compute_mockup_front_image_url(self):
-        image = False
-        if self.mockup_front_image_url:
-            image = base64.b64encode(requests.get(self.mockup_front_image_url).content)
-        self.mockup_front_image = image
+        for record in self:
+            image = False
+            if record.mockup_front_image_url:
+                image = base64.b64encode(requests.get(record.mockup_front_image_url).content)
+            record.mockup_front_image = image
 
     @api.depends("mockup_back_image_url")
     def _compute_mockup_back_image_url(self):
-        image = False
-        if self.mockup_back_image_url:
-            image = base64.b64encode(requests.get(self.mockup_back_image_url).content)
-        self.mockup_back_image = image
+        for record in self:
+            image = False
+            if record.mockup_back_image_url:
+                image = base64.b64encode(requests.get(record.mockup_back_image_url).content)
+            record.mockup_back_image = image
 
     @api.depends("design_front_image_url")
     def _compute_design_front_image_url(self):
-        image = False
-        if self.design_front_image_url:
-            image = base64.b64encode(requests.get(self.design_front_image_url).content)
-        self.design_front_image = image
+        for record in self:
+            image = False
+            if record.design_front_image_url:
+                image = base64.b64encode(requests.get(record.design_front_image_url).content)
+            record.design_front_image = image
 
     @api.depends("design_back_image_url")
     def _compute_design_back_image_url(self):
         image = False
-        if self.design_back_image_url:
-            image = base64.b64encode(requests.get(self.design_back_image_url).content)
-        self.design_back_image = image
+        for record in self:
+            if record.design_back_image_url:
+                image = base64.b64encode(requests.get(record.design_back_image_url).content)
+            record.design_back_image = image
