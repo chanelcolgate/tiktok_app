@@ -42,6 +42,7 @@
                             <br/>
                             <field name="buyer_address" />
                             <field name="buyer_zipcode" />
+                            <field name="shipment" />
                             <br/>
                             <field name="design_state_1" />
                         </group>

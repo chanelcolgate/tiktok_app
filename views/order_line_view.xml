@@ -30,7 +30,7 @@
                             <field name="mockup_front_image_url" />
                             <field name="design_front_image_url" />
                             <field name="quantity" />
-                            <field name="shipment" />
+                            <field name="sku_name" />
                         </group>
                         <group name="group_right">
                             <field name="product_id" />

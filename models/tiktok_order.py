@@ -65,6 +65,17 @@ class Order(models.Model):
         default="not_design"
     )
 
+    shipment = fields.Selection(
+        [
+            ("1", "FirstClass"),
+            ("2", "Priority"),
+            ("3", "RushProduction"),
+            ("4", "OverNight"),
+            ("6", "Expedite")
+        ],
+        default="1"
+    )
+
     def button_send(self):
         body = {}
         products = []

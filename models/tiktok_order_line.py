@@ -9,6 +9,7 @@ class OrderLine(models.Model):
 
     name = fields.Char("Product Name") # order.product_name
     order_line_id = fields.Char("Order Line ID") # order.id
+    sku_name = fields.Char("Sku Name")
     sku_image = fields.Binary("Product Image", compute="_compute_image_url")
     sku_image_url = fields.Char(string="SKU Image URL") # order.sku_image
     currency_id = fields.Many2one("res.currency")
@@ -31,16 +32,6 @@ class OrderLine(models.Model):
     design_back_image_url = fields.Char(string="Design Back Image URL")
     note = fields.Char("Notes")
     quantity = fields.Integer() # order.quantity
-    shipment = fields.Selection(
-        [
-            ("1", "FirstClass"),
-            ("2", "Priority"),
-            ("3", "RushProduction"),
-            ("4", "OverNight"),
-            ("6", "Expedite")
-        ],
-        default="1"
-    )
 
     # Product Image
     @api.depends("sku_image_url")
