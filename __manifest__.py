@@ -25,6 +25,7 @@
         "views/shop_view.xml",
         "views/order_view.xml",
         "views/order_line_view.xml",
+        "views/seller_view.xml",
         "data/tiktok_order_stage.xml",
     ],
     # only loaded in demonstration mode

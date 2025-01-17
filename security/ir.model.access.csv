@@ -8,3 +8,5 @@ order_stage_manager,Order Stage Manager,model_tiktok_order_stage,tiktok_group_ma
 shop_user,Shop User,model_tiktok_shop,tiktok_group_user,1,1,1,0
 shop_manager,Shop Manager,model_tiktok_shop,tiktok_group_manager,1,1,1,1
 shop_line_user,Shop Line User,model_tiktok_shop_line,tiktok_group_user,1,1,1,0
+seller_user,Seller User,model_tiktok_seller,tiktok_group_user,1,1,1,0
+seller_manager,Seller Manager,model_tiktok_seller,tiktok_group_manager,1,1,1,1
